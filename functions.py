@@ -24,6 +24,7 @@ PART ONE:
     >>> print_sign(0)
     Zero
 
+
     >>> print_sign(-3)
     Lower than 0
 
