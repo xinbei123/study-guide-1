@@ -16,7 +16,6 @@ def print_list(items):
         3
         9
     """
-
     for item in items:
         print(item)
 
@@ -123,8 +122,10 @@ def halvesies(numbers):
         >>> halvesies([1, 5])
         [0.5, 2.5]
     """
-
-    return []
+    final_halves = []
+    for num in numbers:
+        final_halves.append(num / 2)
+    return final_halves
 
 
 def word_lengths(words):
@@ -135,8 +136,11 @@ def word_lengths(words):
         >>> word_lengths(["hello", "hey", "hello", "spam"])
         [5, 3, 5, 4]
     """
-
-    return []
+    length_list = []
+    for word in words:
+        length_list.append(len(word))
+        
+    return length_list
 
 
 def sum_numbers(numbers):
@@ -154,8 +158,12 @@ def sum_numbers(numbers):
         >>> sum_numbers([])
         0
     """
+    num_sum = 0
 
-    return None
+    for number in numbers:
+        num_sum += number 
+
+    return num_sum
 
 
 def mult_numbers(numbers):
@@ -177,8 +185,11 @@ def mult_numbers(numbers):
         >>> mult_numbers([])
         1
     """
+    init_num = 1
 
-    return None
+    for num in numbers:
+        init_num = num * init_num
+    return init_num
 
 
 def join_strings(words):
@@ -196,9 +207,7 @@ def join_strings(words):
         >>> join_strings([])
         ''
     """
-
-    return "Not the right thing"
-
+  
 
 def average(numbers):
     """Return the average (mean) of the list of numbers given.
@@ -218,8 +227,11 @@ def average(numbers):
     (Think of the best way to handle an empty input list, though,
     a feel free to provide a good solution here.)
     """
+    num_sum = 0
+    for num in numbers:
+        num_sum += num
 
-    return 0
+    return num_sum / len(numbers)
 
 
 def join_strings_with_comma(words):
@@ -281,11 +293,10 @@ def reverse_list_in_place(items):
         [3, 2, 1]
         >>> orig = ["cookies", "love", "I"]
         >>> reverse_list_in_place(orig)
+        ['I', 'love', 'cookies']
         >>> orig
         ['I', 'love', 'cookies']
     """
-
-    return []
 
 
 def duplicates(items):
@@ -310,7 +321,6 @@ def duplicates(items):
         >>> orig
         ['apple', 'apple', 'berry']
     """
-
     return []
 
 
@@ -338,8 +348,15 @@ def find_letter_indices(words, letter):
     ("o" does not appear in "jumps", so the result for that input is
     `None`.)
     """
+    result = []
+    for word in words:
+        for idx, char in enumerate(word):
+            if char == letter:
+                result.append(idx)
+        if letter not in word:
+            result.append(None)
 
-    return []
+    return result
 
 
 #####################################################################
