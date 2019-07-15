@@ -84,8 +84,16 @@ def smallest_int(numbers):
         >>> smallest_int([]) is None
         True
     """
+    if numbers == []:
+        return None
 
-    return 100
+    smallest_num = numbers[0]
+    for num in numbers:
+        
+        if num < smallest_num:
+            smallest_num = num
+        
+    return smallest_num
 
 
 def largest_int(numbers):
@@ -104,8 +112,16 @@ def largest_int(numbers):
         >>> largest_int([]) is None
         True
     """
+    if numbers == []:
+        return None
 
-    return 0
+    largest_num = numbers[0]
+    for num in numbers:
+
+        if num > largest_num:
+            largest_num = num
+
+    return largest_num
 
 
 def halvesies(numbers):
@@ -207,6 +223,11 @@ def join_strings(words):
         >>> join_strings([])
         ''
     """
+    final_str = ''
+    for word in words:
+        final_str += str(word)
+
+    return final_str
   
 
 def average(numbers):
@@ -321,7 +342,6 @@ def duplicates(items):
         >>> orig
         ['apple', 'apple', 'berry']
     """
-    return []
 
 
 def find_letter_indices(words, letter):
